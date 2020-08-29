@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night & Day</title>
+    <link rel="icon" href="assets/icon-96.png" type="image/png">
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name=description content="A beautiful animation of Night & Day">
+    <!-- IOS Support -->
+    <link rel="apple-touch-icon" href="assets/icon-96.png"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="#51ADF8">
+    <meta name="theme-color" content="#51ADF8">
+</head>
+<body>
+    <div id="sun"></div>
+    <div class="bird">
+        <img src="assets/bird.gif">
+    </div>
+    <div id="moon"></div>
+    <div class="star"></div>
+    <img id="cover" src="assets/mount.png">
+
+    <script src="assets/jquery-3.5.1.min.js"></script>
+    <script src="assets/script.js"></script>
+    <script>
+        window.addEventListener('load', async function() {
+            if ('serviceWorker' in navigator) {
+                try {
+                    await navigator.serviceWorker.register('sw.js');
+                } catch (err) {
+                    console.log(`SW registration failed`, err);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

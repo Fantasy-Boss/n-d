@@ -1,0 +1,131 @@
+body {
+    position: relative;
+    background-color: rgb(142, 232, 248);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back {
+    0% {background: rgb(142, 232, 248);}
+    20% {background: rgb(248, 250, 109);}
+    40% {background: rgb(255, 218, 96);}
+    50% {background: rgb(72, 168, 247);}
+    90% {background: rgb(81, 173, 248);}
+    100% {background: rgb(142, 232, 248);}
+}
+
+::selection {
+    opacity: 0;
+}
+
+::-moz-selection {
+    opacity: 0;
+}
+
+::-webkit-selection {
+    opacity: 0;
+}
+
+#cover {
+    position: fixed;
+    height: 70vh;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    overflow: hidden;
+}
+
+#sun {
+    position: fixed;
+    top: 30vh;
+    left: -30vw;
+    overflow: hidden;
+    background-color: rgb(243, 199, 2);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 5px rgb(252, 203, 43);
+    z-index: 9;
+}
+
+@keyframes sun {
+    60% {
+        top: 6vh;
+        left: 50vw;
+    }
+    100%{
+        top: 30vh;
+        left: 100vw;
+    }
+}
+
+#moon {
+    position: fixed;
+    top: 20vh;
+    left: -30vw;
+    overflow: hidden;
+    background: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: -15px 10px 1px 10px rgb(255, 255, 255);
+    z-index: 9;
+}
+
+@keyframes moon {
+    60% {
+        top: 6vh;
+        left: 50vw;
+    }
+    100%{
+        top: 20vh;
+        left: 107vw;
+    }
+}
+
+.bird {
+    position: fixed;
+    top: 40vh;
+    left: 120vw;
+    overflow: hidden;
+    width: 40vw;
+    z-index: 11;
+    animation: bird 8s linear infinite;
+}
+
+.bird img {
+    width: 100%;
+    filter: brightness(30%);
+    -moz-filter: brightness(30%);
+    -webkit-filter: brightness(30%);
+}
+
+@keyframes bird {
+    100%{
+        left: -50vw;
+    }
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 7;
+    display: none;
+}
+
+.star div {
+    display: flex;
+    width: 100%;
+}
+
+.star div img {
+    width: 8%;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+
